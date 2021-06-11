@@ -146,7 +146,8 @@ export default ChatScreen;
 
 const Container = styled.div``;
 
-const Header = styled.div`
+const Header = styled.div`  border-left: 1px solid #00000014;
+
   position: sticky;
   background-color: whitesmoke;
   z-index: 100;
@@ -155,7 +156,6 @@ const Header = styled.div`
   padding: 15px;
   align-items: center;
   border-bottom: 1px solid whitesmoke;
-
 `;
 
 const Headerinformation = styled.div`
@@ -193,20 +193,21 @@ const InputContainer = styled.form`
   padding: 10px;
   position: sticky;
   bottom: 0;
-  background-color: #fff;
+  background-color: #f0f0f0;
   z-index: 100;
 `;
 
 const Input = styled.input`
   flex: 1;
   align-items: center;
-  padding: 20px;
+  padding: 9px 12px 11px;
   position: sticky;
   bottom: 0;
-  background-color: whitesmoke;
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 21px;
   margin-left: 15px;
   margin-right: 15px;
+  
   outline: none;
-  border: none;
+  border:  1px solid #fff;
 `;

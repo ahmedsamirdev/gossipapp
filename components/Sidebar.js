@@ -64,11 +64,11 @@ function Sidebar() {
       </Header>
 
       <Search>
-        <SearchIcon />
-        <SearchInput placeholder="Search in Chat" />
+        <SearchIco />
+        <SearchInput icon={Search} placeholder="Search in chat" />
       </Search>
 
-      <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
+      {/* <SidebarButton onClick={createChat}>Start a new chat</SidebarButton> */}
       {loadingChats ? (
         <ChatLoading>
           <Circle color="#3C3C3C" size={30} />
@@ -96,7 +96,9 @@ const Container = styled.div`
   min-width: 300px;
   max-width: 350px;
   overflow-y: scroll;
-
+  @media (max-width: 768px) {
+    display: none;
+  }
   ::-webkit-scrollbar {
     display: none;
   }
@@ -113,13 +115,19 @@ const ChatLoading = styled.div`
 const Search = styled.div`
   display: flex;
   align-items: center;
-  padding: 20px;
+  background-color: #f0f0f0;
+  padding: 9px;
   border-radius: 2px;
+  border-bottom: 1px solid whitesmoke;
 `;
-
+const SearchIco = styled(SearchIcon)`
+  margin-right: 10px;
+`;
 const SearchInput = styled.input`
   outline: none;
   border: none;
+  padding: 10px;
+  border-radius: 20px;
   flex: 1;
 `;
 
