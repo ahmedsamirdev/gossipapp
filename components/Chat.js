@@ -36,7 +36,7 @@ const Container = styled.div`
   border-bottom: 1px solid #f2f4f5;
   align-items: center;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px;
   word-wrap: break-word;
 
   :hover {

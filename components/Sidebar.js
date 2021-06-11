@@ -65,7 +65,7 @@ function Sidebar() {
 
       <Search>
         <SearchIco />
-        <SearchInput icon={Search} placeholder="Search in chat" />
+        <SearchInput  placeholder="Search in chat" />
       </Search>
 
       {/* <SidebarButton onClick={createChat}>Start a new chat</SidebarButton> */}
