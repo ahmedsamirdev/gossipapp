@@ -136,7 +136,7 @@ function ChatScreen({chat, messages, recipientSnapshot, recipient}) {
                 <Input value={input} onChange={e => setInput(e.target.value)} />
                 <button hidden disabled={!input} type="submit" >Sent message</button>
                 <IconButton>
-                    <SendIcon />
+                    <SendIcon onClick={sendMessage}/>
                 </IconButton>
             </InputContainer>
         </Container>
