@@ -148,19 +148,19 @@ const Container = styled.div``;
 
 const Header = styled.div`
   position: sticky;
-  background-color: #fff;
+  background-color: whitesmoke;
   z-index: 100;
   top: 0;
   display: flex;
   padding: 15px;
   align-items: center;
   border-bottom: 1px solid whitesmoke;
+
 `;
 
 const Headerinformation = styled.div`
   margin-left: 15px;
   flex: 1;
-
   > h3 {
     margin: 0;
     margin-bottom: 3px;
@@ -179,7 +179,7 @@ const MessageContainer = styled.div`
   padding: 30px;
   /* background-color: #E6DEDA; */
   min-height: 90vh;
-  background-image: url("/bg.png");
+  background-image: url("/bg.webp");
   padding-top: 95px;
 `;
 

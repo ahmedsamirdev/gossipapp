@@ -134,9 +134,9 @@ const SidebarButton = styled(Button)`
 
 const Header = styled.div`
   display: flex;
+  background-color: whitesmoke;
   position: sticky;
   top: 0;
-  background-color: white;
   z-index: 1;
   justify-content: space-between;
   align-items: center;
