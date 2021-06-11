@@ -8,7 +8,7 @@ import AttachFileIcon from '@material-ui/icons/AttachFile';
 import { useCollection } from 'react-firebase-hooks/firestore'
 import Message from './Message'
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
-import MicNoneIcon from '@material-ui/icons/MicNone';
+import SendIcon from '@material-ui/icons/Send';
 import { useState } from 'react'
 import firebase from 'firebase'
 import getRecipientEmail from '../utils/getRecipientEmail';
@@ -136,7 +136,7 @@ function ChatScreen({chat, messages, recipientSnapshot, recipient}) {
                 <Input value={input} onChange={e => setInput(e.target.value)} />
                 <button hidden disabled={!input} type="submit" >Sent message</button>
                 <IconButton>
-                    <MicNoneIcon />
+                    <SendIcon />
                 </IconButton>
             </InputContainer>
         </Container>
