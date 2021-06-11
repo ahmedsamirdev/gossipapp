@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
 
   if (loading) return <Loading />
 
-  if(!user) return <Login />
+  if(!user) return <Login /> 
 
   return <Component {...pageProps} />
 }
