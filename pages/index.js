@@ -1,6 +1,12 @@
 import Head from "next/head";
 import Sidebar from "../components/Sidebar";
 import styled from "styled-components";
+import { IconButton } from "@material-ui/core";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+
+import Hidden from "@material-ui/core/Hidden";
+import withWidth from "@material-ui/core/withWidth";
+
 export default function Home() {
   return (
     <div>
@@ -10,6 +16,12 @@ export default function Home() {
       <Container>
         <Sidebar />
         <RightContainer>
+          <Hidden only={["lg", "md", "sm", "xl"]}>
+            <IconButton>
+              <ArrowBack />
+            </IconButton>
+          </Hidden>
+
           <Contain>
             <img
               src="./welcome.png"
@@ -19,10 +31,10 @@ export default function Home() {
                 marginBottom: 15,
               }}
             />
-            <Title>Keep your phone connected</Title>
+            <Title>Keep connected with your friends</Title>
             <Details>
-              WhatsApp connects to your phone to sync messages. To reduce data
-              usage, connect your phone to Wi-Fi.
+              WhatsApp clone connects with your friends. Just add your friend's
+              Gmail and chat.
             </Details>
           </Contain>
         </RightContainer>
@@ -35,6 +47,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
+const ArrowBack = styled(ArrowBackIcon)`
+  margin: 10px;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
 const Title = styled.h1`
   margin-top: auto;
   font-size: 32px;
@@ -58,6 +80,7 @@ const Details = styled.h1`
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
+  width: 400px;
   text-align: center;
   color: #00000073;
 `;
