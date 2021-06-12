@@ -1,4 +1,4 @@
-import { Avatar, Button, IconButton } from "@material-ui/core";
+import { Avatar, Button, Zoom, Tooltip, IconButton } from "@material-ui/core";
 import styled from "styled-components";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ChatIcon from "@material-ui/icons/Chat";
@@ -49,23 +49,26 @@ function Sidebar() {
     <Container>
       <Header>
         <UserAvatar src={user.photoURL} onClick={() => router.push("/")} />
-
         <IconsContainer>
           <IconButton>
-            <ChatIcon onClick={createChat} />
+            <Tooltip TransitionComponent={Zoom} title="Add new chat">
+              <ChatIcon onClick={createChat} />
+            </Tooltip>
           </IconButton>
           <IconButton>
             <MoreVertIcon />
           </IconButton>
-          <IconButton onClick={() => auth.signOut()}>
-            <ExitToAppIcon />
-          </IconButton>
+          <Tooltip TransitionComponent={Zoom} title="Sign out">
+            <IconButton onClick={() => auth.signOut()}>
+              <ExitToAppIcon />
+            </IconButton>
+          </Tooltip>
         </IconsContainer>
       </Header>
 
       <Search>
         <SearchIco />
-        <SearchInput  placeholder="Search in chat" />
+        <SearchInput placeholder="Search in chat" />
       </Search>
 
       {/* <SidebarButton onClick={createChat}>Start a new chat</SidebarButton> */}

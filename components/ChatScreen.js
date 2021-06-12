@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { auth, db } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
-import { Avatar, IconButton } from "@material-ui/core";
+import { Avatar, Zoom, Tooltip, IconButton } from "@material-ui/core";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import { useCollection } from "react-firebase-hooks/firestore";
@@ -97,7 +97,11 @@ function ChatScreen({ chat, messages, recipientSnapshot, recipient }) {
         )}
 
         <Headerinformation>
-          {recipient ? <h3>{recipient?.name}</h3> : <h3>{recipientEmail}</h3>}
+          {recipient ? (
+            <Name>{recipient?.name}</Name>
+          ) : (
+            <Name>{recipientEmail}</Name>
+          )}
           {recipientSnapshot ? (
             <p>
               Last active:{" "}
@@ -125,6 +129,7 @@ function ChatScreen({ chat, messages, recipientSnapshot, recipient }) {
         {showMessages()}
         <EndOfMessage ref={endOfMessageRef} />
       </MessageContainer>
+
       <InputContainer onSubmit={sendMessage}>
         <IconButton>
           <InsertEmoticonIcon />
@@ -135,7 +140,9 @@ function ChatScreen({ chat, messages, recipientSnapshot, recipient }) {
           Sent message
         </button>
         <IconButton>
-          <SendIcon onClick={sendMessage} />
+          <Tooltip TransitionComponent={Zoom} title="Send">
+            <SendIcon onClick={sendMessage} />
+          </Tooltip>
         </IconButton>
       </InputContainer>
     </Container>
@@ -145,8 +152,14 @@ function ChatScreen({ chat, messages, recipientSnapshot, recipient }) {
 export default ChatScreen;
 
 const Container = styled.div``;
+const Name = styled.h3`
+  font-size: 16px;
+  color: #000;
+  font-weight: 600;
+`;
 
-const Header = styled.div`  border-left: 1px solid #00000014;
+const Header = styled.div`
+  border-left: 1px solid #00000014;
 
   position: sticky;
   background-color: whitesmoke;
@@ -207,7 +220,7 @@ const Input = styled.input`
   border-radius: 21px;
   margin-left: 15px;
   margin-right: 15px;
-  
+
   outline: none;
-  border:  1px solid #fff;
+  border: 1px solid #fff;
 `;

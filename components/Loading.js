@@ -10,7 +10,7 @@ function Loading() {
                     width={300}
                     style={{ marginBottom: 15 }}
                 />
-                <Circle color="#13990A" size={50} />
+                <Circle color="#009688" size={50} />
             </div>
         </center>
     )
