@@ -15,7 +15,7 @@ function Login() {
       </Head>
 
       <LoginContainer>
-        <Logo src="https://i.pinimg.com/originals/fd/d8/97/fdd89706e35f9bc4493559caef4f1122.png" />
+        <Logo src="/logo.png" />
         <Button  onClick={signIn} variant="outlined" >
           Sign in with google
         </Button>

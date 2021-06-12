@@ -160,7 +160,6 @@ const Name = styled.h3`
 
 const Header = styled.div`
   border-left: 1px solid #00000014;
-
   position: sticky;
   background-color: whitesmoke;
   z-index: 100;
@@ -178,7 +177,6 @@ const Headerinformation = styled.div`
     margin: 0;
     margin-bottom: 3px;
   }
-
   > p {
     font-size: 14px;
     color: gray;
@@ -220,7 +218,6 @@ const Input = styled.input`
   border-radius: 21px;
   margin-left: 15px;
   margin-right: 15px;
-
   outline: none;
   border: 1px solid #fff;
 `;
