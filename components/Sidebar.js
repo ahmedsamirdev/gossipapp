@@ -96,7 +96,7 @@ function Sidebar() {
               <div className="inline-block p-10 w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
                 <Dialog.Title
                   as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
+                  className="text-md font-medium leading-6 text-gray-900"
                 >
                   Enter your friend's gmail to create a chat
                 </Dialog.Title>
@@ -107,14 +107,18 @@ function Sidebar() {
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
-                    className="mt-2 border border-transparent focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent focus:outline-none text-gray-600 p-2 rounded-lg w-80 bg-gray-100"
+                    className="mt-2 border border-transparent focus:outline-none focus:ring-1 focus:ring-green-600 focus:border-transparent focus:outline-none text-gray-600 p-2 rounded-lg w-80 bg-gray-100"
                   />
                 </div>
                 <div className="mt-4">
                   <button
                     type="button"
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-green-900 bg-green-100 border border-transparent rounded-md hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500"
-                    onClick={closeModal}
+                    onClick={() => {
+                      closeModal();
+                      createChat();
+                      setEmail("");
+                    }}
                   >
                     Add
                   </button>
@@ -128,8 +132,8 @@ function Sidebar() {
         <UserAvatar src={user.photoURL} onClick={() => router.push("/")} />
         <IconsContainer>
           <IconButton onClick={openModal}>
-            <Tooltip  TransitionComponent={Zoom} title="Add new chat">
-              <ChatIcon  onClick={createChat} />
+            <Tooltip TransitionComponent={Zoom} title="Add new chat">
+              <ChatIcon />
             </Tooltip>
           </IconButton>
           <IconButton>
