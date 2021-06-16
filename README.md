@@ -1,4 +1,4 @@
-# WhatsApp Clone
+# GossipApp Clone
 
 ## Technologies Used:
 

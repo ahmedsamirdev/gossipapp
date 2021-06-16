@@ -6,61 +6,45 @@ import styled from 'styled-components'
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const iconVariants = {
-    opened: {
-      rotate: 135
-    },
-    closed: {
-      rotate: 0
-    }
-  };
 
   const menuVariants = {
     opened: {
-      top: 0,
+      left: 0,
       transition: {
         when: "beforeChildren",
         staggerChildren: 0.5
       }
     },
     closed: {
-      top: "-80vh"
+      left: "-100vw"
     }
   };
 
   const linkVariants = {
     opened: {
       opacity: 1,
-      y: 50
+      x: 50
     },
     closed: {
       opacity: 0,
-      y: 0
+      x: 0
     }
   };
 
   return (
     <div className="App">
+            {/* // هنشيل ال تحت دة ونحط سهم الباك بس */}
+
       <Header>
         <SvgBox
           animate={isOpen ? "opened" : "closed"}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5C13 4.44772 12.5523 4 12 4Z"
-              fill="#fff"
-            />
-          </svg>
+        سهم
+      
         </SvgBox>
       </Header>
-
+      {/* //كومبوننت السايد بار */}
       <Nav
         initial={false}
         variants={menuVariants}
@@ -74,7 +58,7 @@ as
 
 export default App;
 
-
+// هنشيل دة ونحط سهم الباك بس
  const Header = styled.header`
   background: green;
   position: relative;
@@ -84,12 +68,14 @@ export default App;
   z-index: 2;
 `;
 
+//كومبوننت السايد بار
  const Nav = styled(motion.nav)`
-  background-color: red;
-  height: 90vh;
-  width: 100vw;
+  background-color: red; //remove
+  height: 100vh; 
+  min-width: 300px;
+  max-width: 350px;
   position: fixed;
-  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,4 +88,4 @@ export default App;
   font-size: 1.4rem;
 `;
 
- const SvgBox = styled(motion.div)``;
+ const SvgBox = styled(motion.div)`color:red;`;
