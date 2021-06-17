@@ -12,7 +12,7 @@
 
 ## How to use:
 
-1- [Login](https://whatsapp-swart.vercel.app) with your Gmail.
+1- [Login](https://gossipapp.vercel.app) with your Gmail.
 
 2- Add your friend's Gmail.
 
