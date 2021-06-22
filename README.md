@@ -1,4 +1,4 @@
-# GossipApp Clone
+# GossipApp (Chatapp)
 
 ## Technologies Used:
 
